@@ -1,0 +1,45 @@
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+
+set scrolloff=5
+set incsearch
+set number relativenumber
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+noremap <SPACE> <Nop>
+let mapleader=" "
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+nnoremap d "_d
+nnoremap x "_x
+nnoremap r "_r
+
+" Select All
+nnoremap <C-A> gg<S-v>G
+nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+
+nnoremap ]] :action MethodDown<CR>
+nnoremap [[ :action MethodUp<CR>
+
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>g :action FindInPath<CR>
+nnoremap <leader>b :action Switcher<CR>
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap <leader>n :action NextWindow<CR>
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>qa :action CloseAllEditors<CR>
+nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
