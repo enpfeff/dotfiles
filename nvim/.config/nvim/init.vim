@@ -1,8 +1,10 @@
 
-set scrolloff=5
+set scrolloff=8
 set incsearch
 set number relativenumber
 set clipboard+=unnamed
+set hlsearch
+
 
 noremap <SPACE> <Nop>
 let mapleader=" "

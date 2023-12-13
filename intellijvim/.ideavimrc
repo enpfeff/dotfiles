@@ -2,10 +2,12 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 set scrolloff=5
-set incsearch
 set number relativenumber
 set clipboard+=unnamed
 set clipboard+=ideaput
+
+set hlsearch
+set incsearch
 
 noremap <SPACE> <Nop>
 let mapleader=" "
