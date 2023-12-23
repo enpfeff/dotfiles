@@ -179,6 +179,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
 exec --no-startup-id exec /usr/bin/slack
 exec --no-startup-id exec /usr/bin/teams

@@ -22,15 +22,12 @@ nnoremap r "_r
 " Select All
 nnoremap <C-A> gg<S-v>G
 nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
-nnoremap <s-TAB> :action PreviousTab<CR>
-nnoremap <TAB> :action NextTab<CR>
 
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
 
 nnoremap gc :action GotoClass<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotToDeclaration<CR>
 nnoremap gp :action GotToSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
