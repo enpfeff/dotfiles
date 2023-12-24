@@ -188,3 +188,7 @@ exec --no-startup-id exec /usr/bin/intellij-idea-ultimate-edition
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/google-chrome-stable --profile-directory="Default"'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/google-chrome-stable --profile-directory="Profile 1"'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/google-chrome-stable --profile-directory="Profile 3"'
+
+default_border pixel 0
+default_floating_border pixel 0
+

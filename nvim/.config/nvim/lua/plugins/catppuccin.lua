@@ -4,7 +4,6 @@ return {
 	priority = 1000,
 	lazy = false,
 	config = function()
-		vim.cmd("colorscheme catppuccin")
 		require("catppuccin").setup({
 			flavour = "mocha",
 			background = {
@@ -19,5 +18,6 @@ return {
 				treesitter = true,
 			},
 		})
+		vim.cmd("colorscheme catppuccin")
 	end,
 }
