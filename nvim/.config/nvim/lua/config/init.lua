@@ -9,10 +9,10 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 vim.opt.number = true
-vim.opt.colorcolumn = '120'
-vim.signcolumn = "yes"
-vim.cmdheight = 1
-vim.completeopt = "menuone,noinsert,noselect"
+vim.opt.colorcolumn = "120"
+vim.opt.signcolumn = "yes"
+vim.opt.cmdheight = 1
+vim.opt.completeopt = "menuone,noinsert,noselect"
 
 -- Tabs I have no idea why vim needs so much tab action
 local TAB_WIDTH = 2
@@ -30,8 +30,8 @@ vim.opt.swapfile = false
 vim.opt.backspace = "indent,eol,start"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.mouse:append('a')
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.mouse:append("a")
+vim.opt.clipboard = "unnamedplus"
 vim.opt.modifiable = true
 vim.opt.autochdir = false
 
@@ -42,6 +42,6 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.g.mapleader = " "
 -- mappings need to be loaded before lazy
-require('config.lazy');
-require('config.mappings');
+require("config.lazy")
+require("config.mappings")
 

@@ -31,14 +31,20 @@ local config = function()
 		},
 	})
 
--- json
+	lspconfig.volar.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+	})
+
+	-- json
 	lspconfig.jsonls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "json", "jsonc" },
 	})
 
-  -- typescript
+	-- typescript
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
@@ -48,30 +54,16 @@ local config = function()
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
-  -- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
-	lspconfig.emmet_ls.setup({
-		capabilities = capabilities,
+	lspconfig.copilot.setup({
 		on_attach = on_attach,
-		filetypes = {
-			"html",
-			"typescriptreact",
-			"javascriptreact",
-			"javascript",
-			"css",
-			"sass",
-			"scss",
-			"less",
-			"svelte",
-			"vue",
-		},
+		capabilities = capabilities,
 	})
 
-  -- docker
+	-- docker
 	lspconfig.dockerls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")

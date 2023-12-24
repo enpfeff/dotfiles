@@ -24,5 +24,10 @@ keymap.set("v", ">", ">gv")
 keymap.set("n", "<leader>c", ":CommentToggle<CR>", { noremap = true })
 keymap.set("v", "<leader>c", ":CommentToggle<CR>", { noremap = true })
 
+-- Git
+keymap.set("n", "<leader>gs", ":G<CR>", opts)
+keymap.set("n", "<leader>gv", ":Gvdiffsplit<CR>", opts)
+keymap.set("n", "<leader>gb", ":G blame<CR>", opts)
+
 -- Telescope
 -- defined in the config for whatever reason, see plugins/telescope.lua

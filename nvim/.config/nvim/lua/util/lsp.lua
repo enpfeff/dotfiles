@@ -20,6 +20,6 @@ M.on_attach = function(client, bufnr)
 
 end
 
-M.diagnostic_signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
+M.diagnostic_signs = { Error = " ", Warn = " ", Info = "" }
 
 return M
