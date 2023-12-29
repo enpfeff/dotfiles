@@ -50,10 +50,10 @@ gaps outer 5
 # -------------------------------------------------->
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# bindsym $mod+j focus down
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -180,14 +180,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/background.jpg
 
 exec --no-startup-id exec /usr/bin/slack
 exec --no-startup-id exec /usr/bin/teams
 exec --no-startup-id exec /usr/bin/spotify
-exec --no-startup-id exec /usr/bin/intellij-idea-ultimate-edition
+# exec --no-startup-id exec /usr/bin/intellij-idea-ultimate-edition
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/google-chrome-stable --profile-directory="Default"'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/google-chrome-stable --profile-directory="Profile 1"'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/google-chrome-stable --profile-directory="Profile 3"'
+exec 'xautolock -detectsleep -time 10 -locker "i3lock -i ~/Pictures/background.jpg"'
+
 
 default_border pixel 0
 default_floating_border pixel 0

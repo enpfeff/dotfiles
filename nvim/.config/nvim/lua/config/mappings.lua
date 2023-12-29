@@ -50,9 +50,24 @@ keymap.set("n", "<leader>c", ":CommentToggle<CR>", { noremap = true })
 keymap.set("v", "<leader>c", ":CommentToggle<CR>", { noremap = true })
 
 -- Git
+keymap.set("n", "<leader>gb", ":G blame<CR>", opts)
 keymap.set("n", "<leader>gs", ":G<CR>", opts)
 keymap.set("n", "<leader>gv", ":Gvdiffsplit<CR>", opts)
-keymap.set("n", "<leader>gb", ":G blame<CR>", opts)
 
--- Telescope
--- defined in the config for whatever reason, see plugins/telescope.lua
+-- Move
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap.set("n", "<C-d>", "<C-d>zz", opts)
+keymap.set("n", "<C-u>", "<C-u>zz", opts)
+
+keymap.set("n", "n", "nzzzv", opts)
+keymap.set("n", "N", "Nzzzv", opts)
+
+keymap.set("x", "<leader>p", '"_dP', opts)
+keymap.set("n", "<leader>y", '"+y', opts)
+keymap.set("v", "<leader>y", '"+y', opts)
+keymap.set("n", "<leader>Y", '"+y', opts)
+
+keymap.set("n", "<leader>d", '"_d', opts)
+keymap.set("v", "<leader>d", '"_d', opts)
+keymap.set("n", "<leader>ai", ':ChatGPT<CR>', opts)

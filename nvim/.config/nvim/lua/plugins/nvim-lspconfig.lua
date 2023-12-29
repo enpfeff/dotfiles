@@ -31,10 +31,25 @@ local config = function()
 		},
 	})
 
+
+	-- lspconfig.actionlint.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = { "yaml", "yml" },
+	-- })
+
+	-- lspconfig.vuels.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+	-- 	root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+	-- })
+
 	lspconfig.volar.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
 	-- json
@@ -54,10 +69,10 @@ local config = function()
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
-	lspconfig.copilot.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
+	-- lspconfig.copilot.setup({
+	-- 	on_attach = on_attach,
+	-- 	capabilities = capabilities,
+	-- })
 
 	-- docker
 	lspconfig.dockerls.setup({

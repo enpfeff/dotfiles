@@ -31,7 +31,8 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.mouse:append("a")
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamed,unnamedplus"
+
 vim.opt.modifiable = true
 vim.opt.autochdir = false
 
@@ -41,7 +42,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.g.mapleader = " "
+vim.opt.updatetime = 50
 -- mappings need to be loaded before lazy
 require("config.lazy")
 require("config.mappings")
-
