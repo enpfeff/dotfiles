@@ -23,6 +23,9 @@ vim.opt.shiftwidth = TAB_WIDTH
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
+vim.opt.textwidth = 120
+vim.opt.formatoptions:append("w")
+vim.opt.formatoptions:append("q")
 
 -- Behavior
 vim.opt.errorbells = false

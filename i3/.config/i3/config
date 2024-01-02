@@ -126,6 +126,7 @@ assign [class="jetbrains-idea"] $ws2
 assign [class="Microsoft Teams - Preview"] $ws9
 assign [class="Slack"] $ws9
 assign [class="Spotify"] $ws10
+assign [class="discord"] $ws10
 
 
 # switch to workspace
@@ -185,6 +186,7 @@ bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/background.jpg
 exec --no-startup-id exec /usr/bin/slack
 exec --no-startup-id exec /usr/bin/teams
 exec --no-startup-id exec /usr/bin/spotify
+exec --no-startup-id exec /usr/bin/discord
 # exec --no-startup-id exec /usr/bin/intellij-idea-ultimate-edition
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/google-chrome-stable --profile-directory="Default"'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/google-chrome-stable --profile-directory="Profile 1"'
