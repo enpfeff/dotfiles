@@ -49,3 +49,9 @@ vim.opt.updatetime = 50
 -- mappings need to be loaded before lazy
 require("config.lazy")
 require("config.mappings")
+
+-- mappings after lazy
+vim.g.copilot_filetypes = {
+  markdown = true,
+  yaml = true,
+}

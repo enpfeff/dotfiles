@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git config user.name "Ian Pfeffer"
+git config user.email "ipfeffer@pax8.com"

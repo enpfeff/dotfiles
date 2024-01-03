@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+REPO=$1
+
+if [ -z "$REPO" ]
+then
+	echo "repo cannot be empty"
+	exit 1
+fi
+
+git clone git@github-pax8:pax8/${REPO}.git
+cd ./${REPO}
+$HOME/.bin/p8-git-config
