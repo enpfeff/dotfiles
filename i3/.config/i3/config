@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:monospace 8
 
 exec --no-startup-id polybar
-exec_always --no-startup-id feh --bg-fill ~/Pictures/background.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/nord-wolf.jpeg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -181,7 +181,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
-bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/background.jpg
+bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/nord-wolf.jpeg
 
 exec --no-startup-id exec /usr/bin/slack
 exec --no-startup-id exec /usr/bin/teams
