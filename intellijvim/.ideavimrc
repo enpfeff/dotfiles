@@ -26,19 +26,16 @@ nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
 
-nnoremap gc :action GotoClass<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gp :action GotToSuperMethod<CR>
-nnoremap gt :action GotoTest<CR>
-nnoremap gb :action Back<CR>
-nnoremap gf :action Forward<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotoImplementation<CR>
+nnoremap <leader>gp :action GotToSuperMethod<CR>
+nnoremap <leader>gt :action GotoTest<CR>
+nnoremap <leader>gb :action Back<CR>
+nnoremap <leader>gf :action Forward<CR>
 
-nnoremap <leader>u :action FindUsages<CR>
-nnoremap <leader>f :action GotoFile<CR>
-nnoremap <leader>g :action FindInPath<CR>
-nnoremap <leader>b :action Switcher<CR>
+nnoremap <leader>fu :action FindUsages<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fb :action Switcher<CR>
 nnoremap <leader>= :action ReformatCode<CR>
-nnoremap <leader>n :action NextWindow<CR>
-nnoremap <leader>q :action CloseContent<CR>
 nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
