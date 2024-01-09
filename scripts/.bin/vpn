@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo openvpn --config $HOME/.vpn/ipfeffer.ovpn
