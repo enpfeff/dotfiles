@@ -31,6 +31,11 @@ local config = function()
 		},
 	})
 
+  lspconfig.kotlin_language_server.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "kotlin-language-server" },
+  })
 
 	-- lspconfig.actionlint.setup({
 	-- 	capabilities = capabilities,

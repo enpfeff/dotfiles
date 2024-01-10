@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+REPO=$1
+
+if [ -z "$REPO" ]
+then
+	echo "repo cannot be empty"
+	exit 1
+fi
+
+git clone git@github.com:newmoon-org/${REPO}.git
+cd ./${REPO}
