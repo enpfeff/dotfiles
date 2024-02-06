@@ -24,7 +24,6 @@ exec --no-startup-id $HOME/.screenlayout/config.sh
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc 
 exec --no-startup-id sleep 2 && picom -b 
 
-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -42,8 +41,9 @@ bindsym $mod+e exec thunar
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-gaps inner 10
-gaps outer 5
+gaps inner 5
+gaps outer 2
+gaps top 0
 
 # -------------------------------------------------->
 # Focus

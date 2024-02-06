@@ -31,11 +31,11 @@ local config = function()
 		},
 	})
 
-  lspconfig.kotlin_language_server.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    cmd = { "kotlin-language-server" },
-  })
+	lspconfig.kotlin_language_server.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		cmd = { "kotlin-language-server" },
+	})
 
 	-- lspconfig.actionlint.setup({
 	-- 	capabilities = capabilities,
@@ -53,7 +53,7 @@ local config = function()
 	lspconfig.volar.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+		filetypes = { "javascriptreact", "typescriptreact", "vue" },
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
@@ -77,12 +77,41 @@ local config = function()
 	-- lspconfig.copilot.setup({
 	-- 	on_attach = on_attach,
 	-- 	capabilities = capabilities,
+	-- 	filetypes = {
+	-- 		"typescript",
+	-- 		"javascript",
+	-- 		"javascriptreact",
+	-- 		"typescriptreact",
+	-- 		"vue",
+	-- 		"json",
+	-- 		"markdown",
+	-- 	},
 	-- })
 
 	-- docker
 	lspconfig.dockerls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+	})
+
+	lspconfig.eslint.setup({
+		capabilities = capabilities,
+		on_attach = function(client, bufnr)
+			vim.api.nvim_create_autocmd("BufWritePost", {
+				bufnr = bufnr,
+				cmd = "EslintFixAll",
+			})
+			on_attach(client)
+		end,
+		filetypes = {
+			"typescript",
+			"javascript",
+			"javascriptreact",
+			"typescriptreact",
+			"vue",
+			"json",
+		},
+		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")

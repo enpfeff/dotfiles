@@ -58,7 +58,8 @@ return {
 	config = config,
 	keys = {
 		keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
-		keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>"),
+		keymap.set("n", "<leader>ff", ":Telescope git_files hidden=true<CR>"),
+		keymap.set("n", "<leader>fa", ":Telescope find_files hidden=true<CR>"),
 		keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>"),
 		keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
 	},
