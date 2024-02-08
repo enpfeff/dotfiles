@@ -1,8 +1,14 @@
 local config = function()
 	local telescope = require("telescope")
+  local actions = require("telescope.actions")
 	telescope.setup({
 		defaults = {
-			mappings = {},
+			mappings = {
+        i = {
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        }
+      },
 			file_ignore_patterns = { "node_modules/", "dist/", ".git/" },
 			vimgrep_arguments = {
 				"rg",
