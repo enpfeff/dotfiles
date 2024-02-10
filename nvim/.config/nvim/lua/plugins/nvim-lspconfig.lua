@@ -31,17 +31,23 @@ local config = function()
 		},
 	})
 
+	lspconfig.tailwindcss.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+	})
+
 	lspconfig.kotlin_language_server.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		cmd = { "kotlin-language-server" },
 	})
 
-	-- lspconfig.actionlint.setup({
-	-- 	capabilities = capabilities,
-	-- 	on_attach = on_attach,
-	-- 	filetypes = { "yaml", "yml" },
-	-- })
+	lspconfig.yamlls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "yaml", "yml" },
+	})
 
 	-- lspconfig.vuels.setup({
 	-- 	capabilities = capabilities,
