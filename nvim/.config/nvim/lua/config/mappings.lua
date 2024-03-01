@@ -70,4 +70,7 @@ keymap.set("n", "<leader>Y", '"+y', opts)
 
 keymap.set("n", "<leader>d", '"_d', opts)
 keymap.set("v", "<leader>d", '"_d', opts)
-keymap.set("n", "<leader>ai", ':ChatGPT<CR>', opts)
+keymap.set("n", "<leader>ai", ":ChatGPT<CR>", opts)
+
+mapkey("H", "^", "n")
+mapkey("L", "$", "n")

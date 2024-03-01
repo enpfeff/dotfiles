@@ -1,6 +1,8 @@
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
 
+set NERDTree
 set scrolloff=5
 set number relativenumber
 set clipboard+=unnamed
@@ -26,16 +28,54 @@ nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 nnoremap <leader>gc :action GotoClass<CR>
-nnoremap <leader>gd :action GotoImplementation<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gp :action GotToSuperMethod<CR>
 nnoremap <leader>gt :action GotoTest<CR>
-nnoremap <leader>gb :action Back<CR>
-nnoremap <leader>gf :action Forward<CR>
 
-nnoremap <leader>fu :action FindUsages<CR>
+nnoremap <leader>gb :action Annotate<CR>
+nnoremap <leader>gy :action uk.co.ben_gibson.git.link.ui.actions.menu.CopyAction<CR>
+
+nnoremap <leader>e :NERDTree<CR>
+inoremap <C-j> :action EditorDown<CR>
+inoremap <C-k> :action EditorUp<CR>
+set lookupkeys=<Tab>,<Down>,<Up>,<Enter>,<Left>,<Right>,<C-Down>,<C-Up>,<PageUp>,<PageDown>,<C-Q>
+
+nnoremap <leader>fp :action ManageRecentProjects<CR>
+nnoremap <leader>E :action HideAllWindows<CR>
+nnoremap <leader>wh :action HideActiveWindow<CR>
+nnoremap <leader>wa :action HideAllWindows<CR>
+
+nnoremap <leader>hl :action ShowHarpoon<CR>
+nnoremap <leader>ha :action AddToHarpoon<CR>
+nnoremap <A-j> :action GotoHarpoon1<CR>
+nnoremap <A-k> :action GotoHarpoon2<CR>
+nnoremap <A-l> :action GotoHarpoon3<CR>
+nnoremap <A-;> :action GotoHarpoon4<CR>
+
+
+nnoremap <leader>D :action ShowErrorDescription<CR>
+nnoremap <leader>ai :action AIAssistant.ToolWindow.ShowOrFocus<CR>
+vnoremap < <gv
+vnoremap > >gv
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+nnoremap <leader>fd :action FindUsages<CR>
 nnoremap <leader>ff :action GotoFile<CR>
 nnoremap <leader>fb :action Switcher<CR>
 nnoremap <leader>= :action ReformatCode<CR>
 nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
+
+nnoremap H ^
+nnoremap L $

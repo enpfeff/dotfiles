@@ -22,14 +22,24 @@
 -- 	end,
 -- }
 --
+-- return {
+--   'EdenEast/nightfox.nvim',
+--   config = function()
+--     require('nightfox').setup({
+--       options = {
+--         transparent = true,
+--       }
+--     })
+--     vim.cmd('colorscheme carbonfox')
+--   end,
+-- }
+--
 return {
-  'EdenEast/nightfox.nvim',
-  config = function()
-    require('nightfox').setup({
-      options = {
-        transparent = true,
-      }
-    })
-    vim.cmd('colorscheme carbonfox')
-  end,
+	"projekt0n/github-nvim-theme",
+	config = function()
+		require("github-theme").setup({
+		})
+
+		vim.cmd("colorscheme github_dark_default")
+	end,
 }

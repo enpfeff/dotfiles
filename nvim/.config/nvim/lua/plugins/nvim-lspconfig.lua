@@ -60,7 +60,7 @@ local config = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "javascriptreact", "typescriptreact", "vue" },
-		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+		-- root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json"),
 	})
 
 	-- json
