@@ -2,6 +2,10 @@ local keymap = vim.keymap
 
 local opts = { noremap = true, silent = true }
 
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
 -- Directory Navigation
 keymap.set('n', '<leader>e', ':NvimTreeFocus<CR>', opts)
 keymap.set('n', '<leader>E', ':NvimTreeToggle<CR>', opts)
@@ -44,5 +48,6 @@ keymap.set('n', '<leader>ai', ':ChatGPT<CR>', opts)
 
 keymap.set('n', 'H', '^', opts)
 keymap.set('n', 'L', '$', opts)
+keymap.set('i', 'jk', '<ESC>', opts)
 
 return {}

@@ -23,7 +23,7 @@ nnoremap r "_r
 
 " Select All
 nnoremap <C-A> gg<S-v>G
-nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>\ :action ActivateTerminalToolWindow<CR>
 
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
@@ -39,7 +39,7 @@ nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gp :action GotToSuperMethod<CR>
 nnoremap <leader>gt :action GotoTest<CR>
 
-nnoremap <leader>gb :action Annotate<CR>
+nnoremap <leader>tb :action Annotate<CR>
 nnoremap <leader>gy :action uk.co.ben_gibson.git.link.ui.actions.menu.CopyAction<CR>
 
 nnoremap <leader>e :NERDTree<CR>
@@ -47,7 +47,7 @@ inoremap <C-j> :action EditorDown<CR>
 inoremap <C-k> :action EditorUp<CR>
 set lookupkeys=<Tab>,<Down>,<Up>,<Enter>,<Left>,<Right>,<C-Down>,<C-Up>,<PageUp>,<PageDown>,<C-Q>
 
-nnoremap <leader>fp :action ManageRecentProjects<CR>
+nnoremap <leader>sp :action ManageRecentProjects<CR>
 nnoremap <leader>E :action HideAllWindows<CR>
 nnoremap <leader>wh :action HideActiveWindow<CR>
 nnoremap <leader>wa :action HideAllWindows<CR>
@@ -69,10 +69,11 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+nnoremap <Esc> :nohlsearch<CR>
 
-nnoremap <leader>fd :action FindUsages<CR>
-nnoremap <leader>ff :action GotoFile<CR>
-nnoremap <leader>fb :action Switcher<CR>
+nnoremap <leader>gr :action FindUsages<CR>
+nnoremap <leader>sf :action GotoFile<CR>
+nnoremap <leader>sb :action Switcher<CR>
 nnoremap <leader>= :action ReformatCode<CR>
 nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>

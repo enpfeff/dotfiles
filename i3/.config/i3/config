@@ -118,6 +118,7 @@ set $ws10 "0"
 workspace $ws1 output $primary_monitor
 workspace $ws2 output $primary_monitor
 workspace $ws3 output $primary_monitor
+workspace $ws4 output $primary_monitor
 workspace $ws9 output $secondary_monitor
 workspace $ws10 output $secondary_monitor
 

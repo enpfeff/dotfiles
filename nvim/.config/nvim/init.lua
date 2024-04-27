@@ -155,15 +155,21 @@ require('lazy').setup {
   -- See `:help gitsigns` to understand what the configuration keys do
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
+    config = function()
+      local gs = require 'gitsigns'
+      gs.setup {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          delete = { text = '_' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+        },
+      }
+
+      vim.keymap.set('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'Toggle [T]oggle [B]lame' })
+      vim.keymap.set('n', '<leader>tp', gs.preview_hunk_inline, { desc = 'Preview [T]oggle [P]review' })
+    end,
   },
 
   -- NOTE: Plugins can also be configured to run lua code when they are loaded.
@@ -479,6 +485,20 @@ require('lazy').setup {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
         tailwindcss = {},
+        volar = {
+          filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+            typescript = {
+              -- Global install of typescript
+              tsdk = '~/.nvm/versions/node/v20.11.1/lib/node_modules/typescript',
+              -- Current project version and what I will likely use
+              -- tsdk = vim.fn.getcwd() .. 'node_modules/typescript/lib',
+            },
+          },
+        },
         --
 
         lua_ls = {
@@ -741,6 +761,7 @@ require('lazy').setup {
           'dockerfile',
           'gitignore',
           'vue',
+          'kotlin',
         },
         auto_install = true,
         highlight = {
