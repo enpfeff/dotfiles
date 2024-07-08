@@ -7,6 +7,7 @@ then
 	exit 1
 fi
 
+cd $HOME/code/pax8
 git clone git@github-pax8:pax8/${REPO}.git
 cd ./${REPO}
-$HOME/.bin/p8-git-config
+$HOME/.bin/git-config-p8

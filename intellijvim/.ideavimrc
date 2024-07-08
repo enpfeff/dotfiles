@@ -80,3 +80,6 @@ nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 
 nnoremap H ^
 nnoremap L $
+
+noremap <C-o> :action Back<CR>
+noremap <C-i> :action Forward<CR>
