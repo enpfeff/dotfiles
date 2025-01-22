@@ -1,3 +1,41 @@
 #!/usr/bin/env bash
 
-sudo openvpn --config $HOME/.vpn/ipfeffer.ovpn
+config="$HOME/.vpn/ipfeffer.ovpn"
+
+#!/bin/bash
+
+# Function to start the service/process
+start_function() {
+    echo "Starting vpn..."
+    openvpn3 session-start -c $config
+}
+
+# Function to stop the service/process
+stop_function() {
+    echo "Stopping vpn..."
+    openvpn3 session-manage --disconnect -c $config
+}
+
+# Check if no arguments were provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 --start|--stop"
+    exit 1
+fi
+
+# Parse command line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --start)
+            start_function
+            ;;
+        --stop)
+            stop_function
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Usage: $0 --start|--stop"
+            exit 1
+            ;;
+    esac
+    shift
+done

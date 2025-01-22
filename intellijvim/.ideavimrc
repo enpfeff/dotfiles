@@ -2,12 +2,15 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 
+set ReplaceWithRegister
 set NERDTree
 set scrolloff=5
 set number relativenumber
 set clipboard+=unnamed
 set clipboard+=ideaput
-
+set which-key
+set notimeout
+set quickscope
 set hlsearch
 set incsearch
 
@@ -17,9 +20,18 @@ let mapleader=" "
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
-nnoremap d "_d
+" After block yank and paste, move cursor to the end of operated text and don't override register
+vnoremap p "_dP`]
+nnoremap p p`]
+
 nnoremap x "_x
-nnoremap r "_r
+
+" don't yank to default register when changing something
+nnoremap c "xc
+xnoremap c "xc
+
+nnoremap C "xC
+xnoremap C "xC
 
 " Select All
 nnoremap <C-A> gg<S-v>G
@@ -72,14 +84,22 @@ nnoremap <C-u> <C-u>zz
 nnoremap <Esc> :nohlsearch<CR>
 
 nnoremap <leader>gr :action FindUsages<CR>
+nnoremap <leader>sg :action SearchEverywhere<CR>
 nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader>sb :action Switcher<CR>
 nnoremap <leader>= :action ReformatCode<CR>
 nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>qw :action CloseContent<CR>
 
 nnoremap H ^
 nnoremap L $
 
 noremap <C-o> :action Back<CR>
 noremap <C-i> :action Forward<CR>
+
+" code Refactoring
+:map <leader>rr <Action>(RenameElement)
+:map <leader>RR <Action>(Refactorings.QuickListPopupAction)
+:map <leader>sw <Action>(SurroundWith)
+:map <leader>oi <Action>(OptimizeImports)
